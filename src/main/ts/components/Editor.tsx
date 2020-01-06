@@ -76,7 +76,7 @@ export class Editor extends React.Component<IAllProps> {
       const doc = this.elementRef.current.ownerDocument;
       const channel = this.props.cloudChannel;
       const apiKey = this.props.apiKey ? this.props.apiKey : 'no-api-key';
-
+      console.log("ok test")
       ScriptLoader.load(scriptState, doc, `https://cdn.tiny.cloud/1/${apiKey}/tinymce/${channel}/tinymce.min.js`, this.initialise);
     }
   }

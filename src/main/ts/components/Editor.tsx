@@ -14,6 +14,7 @@ import { bindHandlers, isFunction, isTextarea, mergePlugins, uuid } from '../Uti
 import { EditorPropTypes, IEditorPropTypes } from './EditorPropTypes';
 
 export interface IProps {
+  url:string,
   apiKey: string;
   id: string;
   inline: boolean;
@@ -76,8 +77,8 @@ export class Editor extends React.Component<IAllProps> {
       const doc = this.elementRef.current.ownerDocument;
       const channel = this.props.cloudChannel;
       const apiKey = this.props.apiKey ? this.props.apiKey : 'no-api-key';
-      console.log("ok test")
-      ScriptLoader.load(scriptState, doc, `https://cdn.tiny.cloud/1/${apiKey}/tinymce/${channel}/tinymce.min.js`, this.initialise);
+      let url=this.props.url?this.props.url:`https://cdn.tiny.cloud/1/${apiKey}/tinymce/${channel}/tinymce.min.js`
+      ScriptLoader.load(scriptState, doc, url, this.initialise);
     }
   }
 

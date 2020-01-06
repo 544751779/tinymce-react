@@ -82,6 +82,7 @@ export const eventPropTypes: IEventPropTypes = {
 };
 
 export const EditorPropTypes: IEditorPropTypes = {
+  url:PropTypes.string,
   apiKey: PropTypes.string,
   id: PropTypes.string,
   inline: PropTypes.bool,
